@@ -13,7 +13,7 @@
 ![슬라이드15](https://github.com/user-attachments/assets/69f807d4-2c9d-46e3-8753-4d5d1bcdc1a6)
 
 ## 🫧프로젝트 구성원 ##
-<table style:text-align:center;>
+<table>
 <thead>
 <tr>
 <th>
@@ -47,10 +47,10 @@
 </tr>
 </tbody>
    <tr style="font-size:12px;" >
-      <td style="text-align:center;">메인 상세 페이지 <br>구인 글쓰기 페이지 <br> PR글쓰기 페이지</td>
-      <td style="text-align:center;">로그인 페이지<br> 회원가입 페이지</td>
-      <td style="text-align:center;">내가 받은 리뷰 페이지 <br>마이 페이지 <br> 프로필 페이지<br>관심목록 페이지</td>
-      <td style="text-align:center;">글 목록 페이지 <br>알바내역 페이지 <br> 리뷰 작성 페이지</td>
+      <td align="center">메인 상세 페이지 <br>구인 글쓰기 페이지 <br> PR글쓰기 페이지</td>
+      <td align="center">로그인 페이지<br> 회원가입 페이지</td>
+      <td align="center">내가 받은 리뷰 페이지 <br>마이 페이지 <br> 프로필 페이지<br>관심목록 페이지</td>
+      <td align="center">글 목록 페이지 <br>알바내역 페이지 <br> 리뷰 작성 페이지</td>
    </tr>
 </table>
 
