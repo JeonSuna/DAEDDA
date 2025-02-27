@@ -16,12 +16,12 @@
 ![슬라이드15](https://github.com/user-attachments/assets/69f807d4-2c9d-46e3-8753-4d5d1bcdc1a6)
 
 <h3>🔗관련 링크</h3>
-
-    <h4>배포주소:<a href="https://daedda.netlify.app/"> 대따 link</a></h4>
+<li>
+    <ul><h4>배포주소:<a href="https://daedda.netlify.app/"> 대따 link</a></h4></ul>
     <h4>피그마(Figma)<a href="https://www.figma.com/design/Kdoi45uNf7fQrRKqgSHco2/%EB%8C%80%EB%94%B0?node-id=0-1&t=RRfniPSR1j1vPgUN-1"> 피그마 link</a></h4>
     <h4>유저플로우<a href="https://www.figma.com/board/9PiJjs9cenc90STvGKMWaQ/%EB%AA%BB%EB%90%9C%EA%B3%A0%EC%96%91%EC%9D%B4?node-id=1-2&t=GN3GIwJCPzVMbunG-0"> 유저플로우 link</a></h4>
     <h4>요구사항 정의서<a href="https://docs.google.com/spreadsheets/d/1MJas5B3M0HXrkG59m5QjEXxHJ52FVO51crdhdkV1XZ0/edit?gid=0#gid=0"> 요구사항 정의서 link</a></h4>
-   
+</li>
 
    
 
