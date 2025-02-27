@@ -32,10 +32,10 @@
    <td><img width="200px" src="https://github.com/user-attachments/assets/7f359420-b28a-45dd-b872-88e8b88fb05f" /></td>
 </tr>
 <tr>
-      <td><a href="https://github.com/doyoung1002">Doyoung Lee</a></td>
-      <td><a href="https://github.com/yeon1ee">yeon</a></td>
-      <td><a href="https://github.com/JeonSuna">JeonSuna</a></td>
-      <td><a href="https://github.com/iamodh">Donghwan Oh</a></td>
+      <td align="center"><a href="https://github.com/doyoung1002">Doyoung Lee</a></td>
+      <td align="center"><a href="https://github.com/yeon1ee">yeon</a></td>
+      <td align="center"><a href="https://github.com/JeonSuna">JeonSuna</a></td>
+      <td align="center"><a href="https://github.com/iamodh">Donghwan Oh</a></td>
 </tr>
 </tbody>
 
