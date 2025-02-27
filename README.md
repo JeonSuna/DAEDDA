@@ -12,6 +12,44 @@
 ![슬라이드12](https://github.com/user-attachments/assets/240c7026-75b1-468e-b3bf-d628b5033486)
 ![슬라이드15](https://github.com/user-attachments/assets/69f807d4-2c9d-46e3-8753-4d5d1bcdc1a6)
 
+## 🫧프로젝트 구성원 ##
+<table>
+<thead>
+<tr>
+<th>
+<a href="https://github.com/doyoung1002">이도영</a>
+</th>
+<th>
+<a href="https://github.com/yeon1ee">이희연</a>
+</th>
+<th>
+<a href="https://github.com/JeonSuna">전선아</a>
+</th>
+<th>
+<a href="https://github.com/iamodh">오동환</a>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<img width="200px" src="https://github.com/user-attachments/assets/045a2695-d0af-4e44-92f4-42d224cc7de1" />
+</td>
+<td>
+<img width="200px" src="https://github.com/user-attachments/assets/f4f2fa6f-cce4-4196-8f16-3d7141fd5a22" />
+</td>
+<td>
+<img width="200px" src="https://github.com/user-attachments/assets/3eaa34fa-7f80-4d2b-a4d9-490acb953f0f" />
+</td>
+<td>
+<img width="200px" src="https://github.com/user-attachments/assets/7f359420-b28a-45dd-b872-88e8b88fb05f" />
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
 ### 🔗관련 링크 ###
 **배포주소:** [대따 link](https://daedda.netlify.app/)  
 **피그마(Figma):** [피그마 link](https://www.figma.com/design/Kdoi45uNf7fQrRKqgSHco2/%EB%8C%80%EB%94%B0?node-id=0-1&t=RRfniPSR1j1vPgUN-1)  
