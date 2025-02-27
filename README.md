@@ -39,7 +39,7 @@
 </tr>
 </tbody>
 
-   <tr style="font-size:12px;" >
+   <tr >
       <td align="center">메인 상세 페이지 <br>구인 글쓰기 페이지 <br> PR글쓰기 페이지</td>
       <td align="center">로그인 페이지<br> 회원가입 페이지</td>
       <td align="center">내가 받은 리뷰 페이지 <br>마이 페이지 <br> 프로필 페이지<br>관심목록 페이지</td>
