@@ -15,37 +15,30 @@
 ## 🫧프로젝트 구성원 ##
 <table>
 <thead>
-<tr>
-<th>
-<a href="https://github.com/doyoung1002">Doyoung Lee</a>
-</th>
-<th>
-<a href="https://github.com/yeon1ee">yeon</a>
-</th>
-<th>
-<a href="https://github.com/JeonSuna">JeonSuna</a>
-</th>
-<th>
-<a href="https://github.com/iamodh">Donghwan Oh</a>
-</th>
-</tr>
+     <tr>
+        <th>이도영</th>
+        <th>이희연</th>
+        <th>전선아</th>
+        <th>오동환</th>
+    </tr>
+
 </thead>
 <tbody>
+
 <tr>
-<td>
-<img width="200px" src="https://github.com/user-attachments/assets/045a2695-d0af-4e44-92f4-42d224cc7de1" />
-</td>
-<td>
-<img width="200px" src="https://github.com/user-attachments/assets/f4f2fa6f-cce4-4196-8f16-3d7141fd5a22" />
-</td>
-<td>
-<img width="200px" src="https://github.com/user-attachments/assets/3eaa34fa-7f80-4d2b-a4d9-490acb953f0f" />
-</td>
-<td>
-<img width="200px" src="https://github.com/user-attachments/assets/7f359420-b28a-45dd-b872-88e8b88fb05f" />
-</td>
+   <td><img width="200px" src="https://github.com/user-attachments/assets/045a2695-d0af-4e44-92f4-42d224cc7de1" /></td>
+   <td><img width="200px" src="https://github.com/user-attachments/assets/f4f2fa6f-cce4-4196-8f16-3d7141fd5a22" /></td>
+   <td><img width="200px" src="https://github.com/user-attachments/assets/3eaa34fa-7f80-4d2b-a4d9-490acb953f0f" /></td>
+   <td><img width="200px" src="https://github.com/user-attachments/assets/7f359420-b28a-45dd-b872-88e8b88fb05f" /></td>
+</tr>
+<tr>
+      <td><a href="https://github.com/doyoung1002">Doyoung Lee</a></td>
+      <td><a href="https://github.com/yeon1ee">yeon</a></td>
+      <td><a href="https://github.com/JeonSuna">JeonSuna</a></td>
+      <td><a href="https://github.com/iamodh">Donghwan Oh</a></td>
 </tr>
 </tbody>
+
    <tr style="font-size:12px;" >
       <td align="center">메인 상세 페이지 <br>구인 글쓰기 페이지 <br> PR글쓰기 페이지</td>
       <td align="center">로그인 페이지<br> 회원가입 페이지</td>
