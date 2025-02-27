@@ -27,7 +27,7 @@
 <tr>
    <td><img width="200px" src="https://github.com/user-attachments/assets/045a2695-d0af-4e44-92f4-42d224cc7de1" /></td>
    <td><img width="200px" src="https://github.com/user-attachments/assets/f4f2fa6f-cce4-4196-8f16-3d7141fd5a22" /></td>
-   <td><img width="200px" src="https://github.com/user-attachments/assets/3eaa34fa-7f80-4d2b-a4d9-490acb953f0f" /></td>
+   <td><img width="200px" src="https://github.com/user-attachments/assets/eac03468-3639-46aa-9296-0a724bf30b02" /></td>
    <td><img width="200px" src="https://github.com/user-attachments/assets/7f359420-b28a-45dd-b872-88e8b88fb05f" /></td>
 </tr>
 <tr>
@@ -45,6 +45,7 @@
       <td align="center">글 목록 페이지 <br>알바내역 페이지 <br> 리뷰 작성 페이지</td>
    </tr>
 </table>
+
 
 
 
