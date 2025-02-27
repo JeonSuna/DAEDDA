@@ -17,16 +17,16 @@
 <thead>
 <tr>
 <th>
-<a href="https://github.com/doyoung1002">이도영</a>
+<a href="https://github.com/doyoung1002">Doyoung Lee</a>
 </th>
 <th>
-<a href="https://github.com/yeon1ee">이희연</a>
+<a href="https://github.com/yeon1ee">yeon</a>
 </th>
 <th>
-<a href="https://github.com/JeonSuna">전선아</a>
+<a href="https://github.com/JeonSuna">JeonSuna</a>
 </th>
 <th>
-<a href="https://github.com/iamodh">오동환</a>
+<a href="https://github.com/iamodh">Donghwan Oh</a>
 </th>
 </tr>
 </thead>
