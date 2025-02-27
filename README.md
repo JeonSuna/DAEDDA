@@ -13,7 +13,7 @@
 ![슬라이드15](https://github.com/user-attachments/assets/69f807d4-2c9d-46e3-8753-4d5d1bcdc1a6)
 
 ## 🫧프로젝트 구성원 ##
-<table>
+<table align="center">
 <thead>
      <tr>
         <th>이도영</th>
