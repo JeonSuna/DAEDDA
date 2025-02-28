@@ -76,6 +76,7 @@ export default function SignUp() {
   // 프로필 이미지 삭제
   const deleteImg = () => {
     // console.log("delete");
+
     setPreview("/images/smiling_daeddamon.png");
     fileInput.current.value = "";
   };
@@ -119,6 +120,7 @@ export default function SignUp() {
 
         // 업로드된 이미지 경로 확인
         uploadedImgPath = fileRes.data.item[0]?.path;
+        console.log(uploadedImgPath);
       }
 
       const updatedFormData = {
@@ -179,12 +181,12 @@ export default function SignUp() {
   return (
     <div className="flex flex-col items-center justify-center mb-[40px]">
       <form className="w-full" onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center border-gray-200 border-b mb-5">
           <div className="relative inline-block">
             <label htmlFor="image-upload" className="cursor-pointer">
               <img
                 src={preview}
-                className="w-[150px] h-[150px] mb-3 rounded-full object-fit"
+                className="w-[153px] h-[150px] mb-3 rounded-full object-cover"
               />
               {/* <img
                 src="/icons/imgEdit.svg"
@@ -192,7 +194,11 @@ export default function SignUp() {
               /> */}
             </label>
             <img
-              src="/icons/x-box.svg"
+              src={
+                preview === "/images/smiling_daeddamon.png"
+                  ? "/icons/imgEdit.svg"
+                  : "/icons/x-box.svg"
+              }
               className="absolute right-3 bottom-3 cursor-pointer w-[30px] h-[30px]"
               onClick={deleteImg}
             />
