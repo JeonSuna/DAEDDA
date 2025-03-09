@@ -1,20 +1,25 @@
 import { useProductsFilter } from "@hooks/useGetProducts";
 import ListItem from "@pages/main/ListItem";
+import { useQueryClient } from "@tanstack/react-query";
 import useUserStore from "@zustand/userStore";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { PulseLoader } from "react-spinners";
 
 export default function PostList() {
-  const { register, handleSubmit } = useForm();
-  const [keyword, setKeyword] = useState("");
   const { user } = useUserStore();
+  const { register, handleSubmit } = useForm();
+
+  const [keyword, setKeyword] = useState("");
+  const [page, setPage] = useState(1);
+  const limit = 5;
 
   const [condition, setCondition] = useState({
     worktime: "all",
     payment: "all",
+    showExpired: false,
   });
 
   /* 근처 게시글 필터 버튼 */
@@ -23,12 +28,13 @@ export default function PostList() {
     selected: "all",
   });
 
-  const { data, refetch, isLoading } = useProductsFilter(
+  const { data, refetch, isLoading, hasMore } = useProductsFilter(
     keyword,
     condition,
     distanceInfo,
+    page,
+    limit,
   );
-
   const onWorktimeFilterChanged = e => {
     setCondition(prev => {
       const temp = { ...prev, worktime: e.target.value };
@@ -39,6 +45,13 @@ export default function PostList() {
   const onPaymentFilterChanged = e => {
     setCondition(prev => {
       const temp = { ...prev, payment: e.target.value };
+      return temp;
+    });
+  };
+
+  const onShowExpiredChanged = e => {
+    setCondition(prev => {
+      const temp = { ...prev, showExpired: e.target.checked };
       return temp;
     });
   };
@@ -102,6 +115,35 @@ export default function PostList() {
     );
   };
 
+  /* 무한 스크롤 */
+  const lastItemRef = useRef(null);
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    if (observerRef.current) observerRef.current.disconnect();
+
+    observerRef.current = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting && hasMore && !isLoading) {
+          setPage(prevPage => prevPage + 1);
+        }
+      },
+      { threshold: 1.0 },
+    );
+
+    if (lastItemRef.current) observerRef.current.observe(lastItemRef.current);
+  }, [data, hasMore, isLoading]);
+
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    setPage(1);
+    queryClient.invalidateQueries({
+      predicate: query => query.queryKey[0] === "products",
+    });
+    refetch();
+  }, [keyword, condition, distanceInfo]);
+
   return (
     <div className="mb-[80px] flex flex-col">
       <div className="mb-4 flex justify-between screen-530:flex-wrap">
@@ -154,7 +196,7 @@ export default function PostList() {
             {...register("keyword")}
             className="w-full ring-2 ring-primary rounded-2xl py-2 pl-3 pr-[36px]"
             type="text"
-            placeholder="관심있는 대타 장소를 검색해보세요."
+            placeholder="관심있는 공고를 검색해보세요."
           />
           <button type="submit">
             <img
@@ -164,16 +206,13 @@ export default function PostList() {
           </button>
         </div>
       </form>
-      <div className="flex gap-4 mb-5 flex-wrap screen-530:justify-center screen-530:gap-2">
-        <div>
-          <label
-            htmlFor="time"
-            className="mr-[16px] font-[700] text-[1rem] screen-530:mr-[6px]"
-          >
+      <div className="flex gap-4 screen-530:gap-2 mb-5 flex-wrap text-[1rem] screen-530:text-xs">
+        <div className="flex gap-4 screen-530:gap-2 items-center">
+          <label htmlFor="time" className="font-[700]">
             근무 시간
           </label>
           <select
-            className="ring-2 ring-gray-400 focus:ring-primary py-2 px-1 rounded-xl *:text-[12px]"
+            className="ring-2 ring-gray-400 focus:ring-primary rounded-xl px-1 py-2"
             onChange={onWorktimeFilterChanged}
           >
             <option value="all">모든 시간</option>
@@ -182,21 +221,28 @@ export default function PostList() {
             <option value="long">8시간 초과</option>
           </select>
         </div>
-        <div>
-          <label
-            htmlFor="time"
-            className="mr-[16px] font-[700] text-[1rem] screen-530:mr-[6px]"
-          >
+        <div className="flex gap-4 screen-530:gap-2 items-center">
+          <label htmlFor="time" className="font-[700]">
             시급
           </label>
           <select
-            className="ring-2 ring-gray-400 focus:ring-primary py-2 px-1 rounded-xl *:text-[12px]"
+            className="ring-2 ring-gray-400 focus:ring-primary rounded-xl px-1 py-2"
             onChange={onPaymentFilterChanged}
           >
             <option value="all">모든 시급</option>
             <option value="low">10,000원 이하</option>
             <option value="high">10,000원 이상</option>
           </select>
+        </div>
+        <div className="flex gap-4 screen-530:gap-2 items-center ml-auto">
+          <label htmlFor="show-expired" className="font-[700]">
+            마감 포함
+          </label>
+          <input
+            id="show-expired"
+            type="checkbox"
+            onChange={onShowExpiredChanged}
+          />
         </div>
       </div>
 
@@ -208,16 +254,14 @@ export default function PostList() {
         )}
         {data && (
           <>
-            {data.map(data => {
-              // 날짜가 지난 구인글인 경우
-              if (new Date(data.extra.condition.date) < new Date()) return null;
-              // 입금 완료되거나 리뷰가 작성된 구인글인 경우
-              else if (
-                data.extra.state === "EM030" ||
-                data.extra.state === "EM040"
-              )
-                return null;
-              else return <ListItem key={data._id} data={data} />;
+            {data.map((post, index) => {
+              return (
+                <ListItem
+                  key={`${post._id} - ${index}`}
+                  data={post}
+                  ref={index === data.length - 1 ? lastItemRef : null}
+                />
+              );
             })}
           </>
         )}

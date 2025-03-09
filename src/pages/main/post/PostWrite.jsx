@@ -20,16 +20,18 @@ export default function PostWrite() {
   const queryClient = useQueryClient();
   const [position, setPosition] = useState({ lat: 33.450701, lng: 126.570667 });
   const [address, setAddress] = useState("");
+  const [isPostcodeOpen, setIsPostcodeOpen] = useState(false);
 
   const {
     register,
     handleSubmit,
     setValue,
     reset,
+    trigger,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: "💥급구💥 저 대신 하루만 알바 해주실 분 구합니다",
+      name: "💥급구💥 와우 신내떡 노량진 알바 구합니다",
       company: "와우 신내떡 노량진",
       price: "88000",
       workTime: "13:00-21:00",
@@ -43,6 +45,13 @@ export default function PostWrite() {
     setValue("location", [position.lat, position.lng]);
     setValue("address", address);
   }, [position, address, setValue]);
+
+  useEffect(() => {
+    if (address) {
+      setValue("address", address, { shouldValidate: true });
+      trigger("address");
+    }
+  }, [address, setValue, trigger]);
 
   const addPost = useMutation({
     mutationFn: async formData => {
@@ -252,6 +261,23 @@ export default function PostWrite() {
           setPosition={setPosition}
           address={address}
           setAddress={setAddress}
+          isPostcodeOpen={isPostcodeOpen}
+          setIsPostcodeOpen={setIsPostcodeOpen}
+        />
+
+        <InputField
+          labelName="주소 입력"
+          type="text"
+          placeholder="주소 입력"
+          register={register("address", {
+            required: "주소 입력은 필수입니다.",
+          })}
+          value={address}
+          onChange={e => {
+            setAddress(e.target.value);
+          }}
+          errorMsg={errors.address?.message}
+          onClick={() => setIsPostcodeOpen(true)}
         />
 
         <fieldset>
