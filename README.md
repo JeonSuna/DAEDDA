@@ -1,9 +1,7 @@
 
 
 
-<div align="center">
-   <h1><a href="https://daedda.netlify.app/"> 대따 바로가기</a></h1>
-</div>
+
 
 
 
